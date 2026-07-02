@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Land Cover Classification</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f7f9fc;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1f6feb, #0b3d91);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 35px 20px;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #0b3d91;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: #0b3d91;
+      margin-bottom: 10px;
+    }
+
+    .project-image {
+      width: 100%;
+      max-width: 1100px;
+      display: block;
+      margin: 25px auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+
+    .caption {
+      font-size: 0.95rem;
+      color: #555;
+      text-align: center;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+
+    .map-container {
+      margin-top: 25px;
+      margin-bottom: 35px;
+    }
+
+    .note-box {
+      background: #f7f9fc;
+      border-left: 5px solid #0b3d91;
+      padding: 15px 18px;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+
+    a {
+      color: #0b3d91;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0b3d91;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Land Cover Classification</h1>
+    <p>
+      A GIS and remote sensing assignment using supervised classification, unsupervised classification,
+      NDVI, and land cover analysis.
+    </p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Final Map</h2>
+
+      <img src="images/unsupervised-object-classification.png" alt="Final land cover classification map" class="project-image">
+
+      <p class="caption">
+        Final land cover classification map.
+      </p>
+
+      <div class="note-box">
+        <p>
+          I chose this as my final map because it reminds me of a Dutch impressionist painting. I also feel that object based classification is better for geographical features like agricultural fields and plants, because it groups areas into cleaner shapes instead of showing them as individual pixels.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Esri Certificate</h2>
+
+      <img src="images/esri-certificate.jpeg" alt="Esri supervised pixel based image classification certificate" class="project-image">
+
+      <p class="caption">
+        Esri course certificate for supervised pixel based image classification.
+      </p>
+    </section>
+
+    <section>
+      <h2>Question 1: Describe to your website visitor, the value of automated land cover classification. Tell the reader the difference between supervised and unsupervised classification.</h2>
+
+      <p>
+        Automated land cover classification is useful because it allows us to classify substantial amounts of satellite imaging according to categories (usually set by us). This method allows us to process imagery according to whether it is water, forest, urban, etc. Instead of manually classifying data, the computer can use the spectral imaging from satellites to determine what type of land to use it is. This makes it easier for us to study changes in vegetation and land use, soil health, etc.
+      </p>
+
+      <p>
+        The main difference in supervised and unsupervised lies in the amount of supervision that we place. As the name suggests, humans supervise the classification by creating training samples for different classifications of use. For example, features that are completely certain (such as roads and water bodies) can be classified easily due to the consistency and comparing map patterns. These features and other trained features allow for the creation of standardized sets. In unsupervised, the software classifies such pixels automatically without being told what each pixel color group means. The user then looks at the results and classifies accordingly. Supervised classification is more controlled as it uses human training, but it is more dependent on the training samples, therefore. Unsupervised could be faster and may find patterns that we ignore as humans, but it can also lose nuance that humans know.
+      </p>
+    </section>
+
+    <section>
+      <h2>Question 2: What is the approximate length and width of each pixel – the spatial resolution?</h2>
+
+      <p>
+        I wasn't completely sure but I believe that it is 18-19metres as the length and width. I expected it to be 10 m, and this leads me to believe that I made a mistake
+      </p>
+    </section>
+
+    <section>
+      <h2>Question 3: Provide a screenshot of your spectral profile with at least 4 different land covers.</h2>
+
+      <img src="images/spectral-profile.png" alt="Spectral profile with at least 4 different land covers" class="project-image">
+
+      <p class="caption">
+        Spectral profile with at least 4 different land covers.
+      </p>
+    </section>
+
+    <section>
+      <h2>Question 5: Provide a screenshot of your Unsupervised Pixel Based Classification.</h2>
+
+      <img src="images/unsupervised-pixel-classification.png" alt="Unsupervised Pixel Based Classification" class="project-image">
+
+      <p class="caption">
+        Unsupervised Pixel Based Classification.
+      </p>
+    </section>
+
+    <section>
+      <h2>Question 6: Provide a screenshot of your Unsupervised Object Based Classification. Preview only is fine.</h2>
+
+      <img src="images/unsupervised-object-classification.png" alt="Unsupervised Object Based Classification" class="project-image">
+
+      <p class="caption">
+        Unsupervised Object Based Classification.
+      </p>
+    </section>
+
+    <section>
+      <h2>Question 7: Provide a screenshot of your Supervised Pixel Based Classification.</h2>
+
+      <img src="images/supervised-pixel-classification.png" alt="Supervised Pixel Based Classification" class="project-image">
+
+      <p class="caption">
+        Supervised Pixel Based Classification.
+      </p>
+
+      <p>
+        Wasnt too sure of this
+      </p>
+    </section>
+
+    <section>
+      <h2>Question 8: What were the results of your confusion matrix? Explain the aim of a confusion matrix and the difference between producer and user error to your website visitors.</h2>
+
+      <p>
+        Wasn't done as advised by Professor.
+      </p>
+    </section>
+
+    <section>
+      <h2>Question 9: Screenshot of NDVI with a color scheme appropriate for vegetation health. Why do you think this color scheme is appropriate for communicating vegetation health? Who is the target audience?</h2>
+
+      <img src="images/ndvi-map.png" alt="NDVI map with vegetation health color scheme" class="project-image">
+
+      <p class="caption">
+        NDVI map with vegetation health color scheme.
+      </p>
+
+      <p>
+        I actually chose this map color scheme on the advice of my neighbour but in hindsight I would've likely chosen a different color scheme. I felt that the choice of a blue-green-orange scheme (with orange being greener regions) worked as it looked a lot like the heat maps; I have seen weather forecasts and was visually striking. But looking at it now, I should've gone with a classic green color scheme with darker green region displaying a denser region of vegetation. If I gone with this classic pattern, it wouldve been more intuitive to the general public who justifiably view green as the plant color. Visual comparison is extremely important for a map like this as we are attempting to catch trends and compare maps.
+      </p>
+    </section>
+
+    <section>
+      <h2>Question 10: What are the strengths and weaknesses of each of the methods you tried and shared above? What unique insight did you find from each? Were there any anomalies in the data?</h2>
+
+      <p>
+        Each method has its own advantages and disadvantages and allows us to view different types of data here and understand different patterns.
+      </p>
+
+      <p>
+        The unsupervised pixel-based classifications allowed us to get a quick grasp on the dynamics of the map as we did not have to train classes and we could quickly see potential distributions. While the computer could group pixels by similarity in color, i still had to investigate what each of those groups actually meant. This could be confusing as different land use types could have similar colors such as in the cases of roofs and certain fallow fields. In the end while I did receive some interesting first hand info, further refinement was necessary.
+      </p>
+
+      <p>
+        I found that unsupervised object based classification had similar problems like the previous method. I found this method to be quite aesthetically pleasant as it did not have the seemingly unnatural look of pixels. This helped the map appear more cleaner and less like “static”. In urban areas where great variations can be seen to changes in building structure or material, this method helped reduce the effects. However I could definitely see some generalizations and I felt that this method was somewhat inaccurate.
+      </p>
+
+      <p>
+        The supervised ppixel based classification was more controlled as i could provide it with sampels. This was extremely useful in the case of roads and canals as the deep blue color stuck and affected its neighboring sites. I found the increased control to be more useful but I had difficulty property training the data initially and I still feel as if I made many mistakes. This method has potential to move your analysis to the next level but it requires quality and time otherwise it can backfire more than unsupervised techniques. Different plant types could reflect slightly different lights. This helps explain why classification needs manual control but I feel that I could've just as easily missed certain areas.
+      </p>
+
+      <p>
+        I felt that the NDVI map superseded many of the other techniques. I am not really sure of it’s mechanics (except for the formula) but I wasn't sure if it was better than the previous methods. I am also not sure if it could handle the different stages of agriculture that I could account for in supervised.
+      </p>
+
+      <p>
+        All this shows us that multiple approaches are necessary proper insights as. Mixed pixels due to proximity were a special problem as they could completely change the position of 1 pixel and they would require further categorization. Recreational grass and other parks were also annoying for the same reason of contamination. While this method is meant to account for such problems, I was still worried about it. Perhaps this problem could be fixed with better resolution but that ids outside the scope of this project. I also found the emergence of tennis courts (which are normally red) to be green on my map to be somewhat funny.
+      </p>
+    </section>
+
+    <p>
+      <a href="index.html">Back to homepage</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GIS Student Portfolio</p>
+  </footer>
+</body>
+</html>

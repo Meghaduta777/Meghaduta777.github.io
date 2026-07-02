@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARCGIS Portfolio</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background: #f7f9fc;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1f6feb, #0b3d91);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      text-align: center;
+      padding: 12px;
+    }
+
+    nav a {
+      color: #0b3d91;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 35px 20px;
+    }
+
+    section {
+      margin-bottom: 45px;
+    }
+
+    h2 {
+      color: #0b3d91;
+      margin-bottom: 14px;
+      font-size: 1.8rem;
+    }
+
+    .intro {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .assignment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 5px 16px rgba(0,0,0,0.14);
+    }
+
+    .card-image {
+      background: #dce8ff;
+      color: #0b3d91;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card-content h3 {
+      margin-bottom: 8px;
+    }
+
+    .card-content a {
+      color: #0b3d91;
+      text-decoration: none;
+    }
+
+    .card-content a:hover {
+      text-decoration: underline;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .skill {
+      background: #e8f0ff;
+      color: #0b3d91;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0b3d91;
+      color: white;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Agastya's GIS Portfolio</h1>
+    <p>
+      A portfolio of GIS assignments, mapping projects, spatial analysis,
+      remote sensing, and cartographic design work.
+    </p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#assignments">Assignments</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="about" class="intro">
+      <h2>About This Portfolio</h2>
+      <p>
+        This website contains my GIS portfolio for the ARCGIS course. It includes
+        assignments involving spatial analysis, cartographic design, remote sensing,
+        sustainability applications, and interactive web mapping.
+      </p>
+      <h3>What is GIS</h3>
+       <p>
+        GIS is fundamentally the study of Geographic Science and how we can analyse and understand the 
+        information that we collect. The Information that we collect can be used to answer questions about the world. 
+        Spatial data can be used to answer a wide variety of topics- From the migration patterns of swallows 
+        to finding how close you are to an ice cream store, it has a wide variety of uses. We can use GIS to find the relation 
+        between places and patterns of distribution
+      </p>
+       <p>
+         GIS programs allow us to store, organise and visualise data using maps. The use of layers 
+         allow us to combine, hide and compare information. We can show rivers and roads and many other forms
+         of information according to the needs of the Task. 
+       </p>
+      <p>
+        GIS programs allow for the use of raster analysis to solve real life problems. As we see in this course, the information that we gain can be used for a 
+        wide variety of tasks, from flood analysis to vegetation monitoring through satellite remote sensing. Gis can help us make better decisions about complex problems that we face in veryday life, helping us make better cities, countries and a better world
+       </p>
+    </section>
+
+    <section id="assignments">
+      <h2>Assignments</h2>
+      <p>Use the links below to open each assignment page.</p>
+
+      <div class="assignment-grid">
+
+        <article class="card">
+          <div class="card-image">ASSIGNMENT 1</div>
+          <div class="card-content">
+            <h3><a href="chloropleth.html">Choropleth Map</a></h3>
+            <p>
+              Choropleth map showing SDG indicator data across countries.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">ASSIGNMENT 2</div>
+          <div class="card-content">
+            <h3><a href="isochrone.html">Isochrone Map</a></h3>
+            <p>
+              An Isochrone map was formed that showed walking ranges around health clinics in Hoechst
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">ASSIGNMENT 3</div>
+          <div class="card-content">
+            <h3><a href="floodanalysis.html">Flood Analysis</a></h3>
+            <p>
+              Flood analysis assignment using spatial data and GIS methods.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">ASSIGNMENT 4</div>
+          <div class="card-content">
+            <h3><a href="NDVI.html">Vegetation Indices</a></h3>
+            <p>
+             Vegetation change around Sanjay Gandhi National Park between 2018 and 2025 using QGIS raster analysis, true color composites, NDVI calculation and satellite imaging
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">ASSIGNMENT 5</div>
+          <div class="card-content">
+            <h3><a href="Satclass.html">Satellite Classification</a></h3>
+            <p>
+              Satellite image classification assignment using remote sensing methods.
+            </p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-image">ASSIGNMENT 6</div>
+          <div class="card-content">
+            <h3><a href="multicriteria.html">Multicriteria Analysis</a></h3>
+            <p>
+              A reflection on multicriteria analysis. I also looked at a scenario where it would be used and how i might go about it
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <p>
+        GIS software, programming languages, and spatial analysis methods used across
+        this portfolio.
+      </p>
+
+      <div class="skills">
+        <span class="skill">QGIS</span>
+        <span class="skill">ArcGIS Pro</span>
+        <span class="skill">Remote Sensing</span>
+        <span class="skill">Spatial Analysis</span>
+        <span class="skill">Cartography</span>
+        <span class="skill">Python</span>
+        <span class="skill">GeoJSON</span>
+      </div>
+    </section>
+
+    <section id="contact" class="intro">
+      <h2>Contact</h2>
+      <p>Name: A Kantawala</p>
+      <p>Email: a.kantawala@students.uu.nl</p>
+      <p>University: University Utrecht</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GIS Student Portfolio</p>
+  </footer>
+</body>
+</html>

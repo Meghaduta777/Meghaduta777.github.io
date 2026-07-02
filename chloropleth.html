@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SDG 4.1.1 Choropleth Map</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""/>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""></script>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f7f9fc;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1f6feb, #0b3d91);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 35px 20px;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #0b3d91;
+      margin-top: 0;
+    }
+
+    #map {
+      width: 100%;
+      height: 650px;
+      margin: 25px auto;
+      border: 1px solid #999;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+
+    .project-image {
+      width: 100%;
+      max-width: 1100px;
+      display: block;
+      margin: 25px auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+
+    .caption {
+      font-size: 0.95rem;
+      color: #555;
+      text-align: center;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      padding: 6px 8px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: white;
+      background: rgba(255,255,255,0.85);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 5px;
+    }
+
+    .info h4 {
+      margin: 0 0 5px;
+      color: #777;
+    }
+
+    .legend {
+      text-align: left;
+      line-height: 18px;
+      color: #555;
+    }
+
+    .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.7;
+    }
+
+    a {
+      color: #0b3d91;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0b3d91;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>SDG 4.1.1 Choropleth Map</h1>
+    <p>
+      Indicator shown: female lower secondary reading percentage. Hover over a country to see its value.
+    </p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Interactive Choropleth Map</h2>
+
+      <p>
+        Indicator shown: female lower secondary reading percentage. Hover over a country to see its value.
+      </p>
+
+      <div id="map"></div>
+
+      <p class="caption">
+        Interactive choropleth map showing female lower secondary reading percentage.
+      </p>
+    </section>
+
+    <section>
+      <h2>Print Layout Map</h2>
+
+      <img src="images/choropleth-print-layout.png" alt="Print layout of SDG 4.1.1 choropleth map" class="project-image">
+
+      <p class="caption">
+        Print layout of the SDG 4.1.1 choropleth map.
+      </p>
+    </section>
+
+    <section>
+      <h2>1. What is this map showing?</h2>
+
+      <p>
+        My map shows the percentage of female students in each country who have managed to achieve a minimum reading proficiency. This reading proficiency is defined and standardized by the UN. This goal follows the fourth sustainable development goal (SDG) which ensures equal and inclusive access to education for all. The specific group is Target 4.1, which focuses on gender equality when it comes to access to education. The group I selected is defined as 4.1.1 (c) which is the proportion of children and young people who are near the end of lower secondary education and have achieved a minimum proficiency in reading. I chose to focus on female proficiency because I have observed how adult women in LDCs find themselves exploited by their inability to properly read. This means that they might not be able to properly access legal rights. While countries may enact progressive laws, it's important that citizens understand and use their rights. I have observed how women may find themselves at a disadvantage due to patriarchal restrictions on education.
+      </p>
+
+      <p>
+        The darker countries show greater proficiency when reading, with lighter countries showing a lower proficiency. I chose to only display countries with their data from 2022 as this was the latest date possible. The gray countries did not meet these requirements and displayed “no data”.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. What is a choropleth map?</h2>
+
+      <p>
+        A choropleth map is a type of map where countries or other regional divisions are shaded using different colors (usually in the form of a categorical scale) in order to represent data. Here each country was colored according to their percentage of female students in lower secondary who have achieved a minimum reading proficiency. Choropleth maps can allow us to easily compare global or regional rates of something because we can quickly categories and compare visually. We can observe patterns quite easily, such as which continents may have lower rates. Since the data is in percentage, it is more useful than raw numbers as we can judge state capacity and not just mere population. However, such maps can also have drawbacks, namely due to the fact that they can trick our perceptions. We are naturally drawn to larger shapes, which means geographically larger countries tend to get more attention. Maps such as mine can also not display regional dynamics and end up treating countries as uniform wholes. While this can be solved by having maps with more divisions, it depends on the availability of data.
+      </p>
+    </section>
+
+    <section>
+      <h2>3. What new skills did you gain?</h2>
+
+      <p>
+        This was my first assignment with GIS, and it was the first time that I was exposed to the software. I learned how to download and format CSV data and clean it according to my requirements by sorting and pruning. II also learnt how to create a choropleth map by linking statistical data to the geographical limits and creating a color scheme. I also learned about layer stacking on QGIS, which is an important feature.
+      </p>
+
+      <p>
+        I learned some information about SDGs and the information they represent. There were some interesting discussions on the elements of map design- What information needs to be present and what should be missing. What elements need to have attention drawn to them, and what parts do not? These factors played a role when it came to importing the file as an image, as I had to create the layout. I edited the legend, title, and source. I showed missing data in grey and included a scale on the left. Design choices that help make the map easier to understand is important
+      </p>
+    </section>
+
+    <p>
+      <a href="index.html">Back to homepage</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GIS Student Portfolio</p>
+  </footer>
+
+  <script type="text/javascript" src="mySDGdata.js"></script>
+
+  <script type="text/javascript">
+    const map = L.map('map').setView([20, 0], 2);
+
+    const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    const info = L.control();
+
+    info.onAdd = function () {
+      this._div = L.DomUtil.create('div', 'info');
+      this.update();
+      return this._div;
+    };
+
+    info.update = function (props) {
+      const contents = props
+        ? `<b>${props.country_name}</b><br />Reading: ${props.reading_pct ?? 'No data'}${props.reading_year ? ' (' + props.reading_year + ')' : ''}`
+        : 'Hover over a country';
+
+      this._div.innerHTML = `<h4>SDG 4.1.1</h4>${contents}`;
+    };
+
+    info.addTo(map);
+
+    function getColor(d) {
+      return d == null ? '#d9d9d9' :
+             d > 80  ? '#005a32' :
+             d > 60  ? '#238b45' :
+             d > 40  ? '#41ab5d' :
+             d > 20  ? '#74c476' :
+             d > 0   ? '#c7e9c0' :
+                        '#f7fcf5';
+    }
+
+    function style(feature) {
+      return {
+        weight: 1,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7,
+        fillColor: getColor(feature.properties.reading_pct)
+      };
+    }
+
+    function highlightFeature(e) {
+      const layer = e.target;
+
+      layer.setStyle({
+        weight: 3,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+      });
+
+      layer.bringToFront();
+      info.update(layer.feature.properties);
+    }
+
+    let geojson;
+
+    function resetHighlight(e) {
+      geojson.resetStyle(e.target);
+      info.update();
+    }
+
+    function zoomToFeature(e) {
+      map.fitBounds(e.target.getBounds());
+    }
+
+    function onEachFeature(feature, layer) {
+      layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+      });
+    }
+
+    geojson = L.geoJson(nationData, {
+      style: style,
+      onEachFeature: onEachFeature
+    }).addTo(map);
+
+    const legend = L.control({position: 'bottomright'});
+
+    legend.onAdd = function () {
+      const div = L.DomUtil.create('div', 'info legend');
+      const grades = [0, 20, 40, 60, 80];
+      const labels = [];
+      let from, to;
+
+      for (let i = 0; i < grades.length; i++) {
+        from = grades[i];
+        to = grades[i + 1];
+
+        labels.push(
+          `<i style="background:${getColor(from + 1)}"></i> ${from}${to ? '&ndash;' + to : '+'}`
+        );
+      }
+
+      labels.push(`<i style="background:#d9d9d9"></i> No data`);
+      div.innerHTML = labels.join('<br>');
+      return div;
+    };
+
+    legend.addTo(map);
+  </script>
+
+</body>
+</html>

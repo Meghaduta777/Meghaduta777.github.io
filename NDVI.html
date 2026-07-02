@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vegetation Change Analysis</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f7f9fc;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1f6feb, #0b3d91);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 35px 20px;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #0b3d91;
+      margin-top: 0;
+    }
+
+    h3 {
+      color: #0b3d91;
+      margin-bottom: 10px;
+    }
+
+    .project-image {
+      width: 100%;
+      max-width: 1100px;
+      display: block;
+      margin: 25px auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+
+    .caption {
+      font-size: 0.95rem;
+      color: #555;
+      text-align: center;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+
+    .map-container {
+      margin-top: 25px;
+      margin-bottom: 35px;
+    }
+
+    a {
+      color: #0b3d91;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0b3d91;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Vegetation Change Analysis</h1>
+    <p>
+      A GIS and remote sensing analysis of vegetation change around Sanjay Gandhi national park in Mumbai, India.
+    </p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Project Overview</h2>
+
+      <p>
+        For this assignment I chose to study vegetation change around the Sanjay Gandhi national park which is in the center of the city of Mumbai, India. I am a native of this city and it has always fascinated me how a large national park with predators like leopards can exist in the middle of such a densely populated city. As expected, the presence of uncleared land makes it very attractive for destruction, something which threatens the very existence of such a place. I was interested in looking at whether the presence of such dense urban settlement so close to a protected national park would lead to its recession. My selected Orthomosaic map contains lakes, low and high density housing as well as industrial zones. This would provide me with an interesting analysis site where I can use the NDVI values to compare.
+      </p>
+    </section>
+
+    <section>
+      <h2>Project Summary, Software Used, and Technical Skills Demonstrated</h2>
+
+      <p>
+        This project used Google Earth Engine, Sentinel-2 satellite imagery, QGIS raster analysis, true color composites, NDVI calculation, and change detection to study vegetation change around Sanjay Gandhi National Park between 2018 and 2025.
+      </p>
+    </section>
+
+    <section>
+      <h2>Orthomosaic and Satellite Imagery</h2>
+
+      <p>
+        I used sentinel-2 imagery which was stitched by google earth engine. The satellite carries out high spec multispectral land monitoring and this ability to measure light bands will be used by us to compare vegetation in an effective manner as we can distinguish between colors by choosing the proper set of multispectral bands. An orthomosaic map stitches together the satellite scans after correcting and adjusting the scans in order to create larger and higher resolution photos. I chose the months of January to March period because this month would be relatively dry and would avoid the legendary monsoon season of Mumbai. The processing of the earth engine also helps reduce cloud cover, which would affect the results of our future analysis.
+      </p>
+    </section>
+
+    <section>
+      <h2>True Color Composite and Multispectral Bands</h2>
+
+      <p>
+        I chose the band values of red(b4), green(B3) and blue(B2) because I was advised to create a true color composite that would reflect what the image may look like in real life. Similarly, the bands could be changed to highlight specific features. Multispectral imaging allows for the capture of information that lies beyond the visible range for humans, which grants special abilities. In many cases, it can see what we cannot.  This feature is not really used here as we use true color but in other cases we can use the reflections of light to distinguish between healthy and dying plants.
+      </p>
+    </section>
+
+    <section>
+      <h2>NDVI</h2>
+
+      <p>
+        The NDVI (Normalized Difference Vegetation Index) is a type of vegetation index that allow us to study plant health and plant cover. It can be used for forestry, agriculture and conservation as it allows us to use the data from multispectral scanning to study plant health. Since satellites collect data in a large range and at a huge scale, we can use such indices to quickly study large swathes of land. As the world pays more attention to conservation as a way to reduce the im pact of climate change, remote sensing and analysis has become a very valuable tool for all of us.
+      </p>
+
+      <p>
+        NDVI uses infrared and near infrared bands for its calculations. The formula was given to us based on the bands we chose for the true color composite. NDVI values usually range from +1 to –1. Higher values suggest healthier and more sense vegetation, values near 0 show some change while negative values may indicate a complete lack of plants, either due to water or buildings.
+      </p>
+    </section>
+
+    <section>
+      <h2>NDVI Comparison and Change Over Time</h2>
+
+      <p>
+        I chose to compare the NDVI from 2018 and 2025 as I felt that this was a long enough duration to show change. When looking at the NDVI maps of both time periods, I would say that it is somewhat expected. You can distinctly see the shapes of buildings which are more yellow compared to their surroundings. You can also see the Powai lake with a deep shade of yellow (While the contrast may not seem as strong here on my maps; this was due to my selection of colors for the map. Upon choosing a stronger greener color, the contrast became more noticeable. This post operation adjustment can be seen here-)
+      </p>
+
+      <img src="images/ndvi change.png" alt="Post operation adjustment showing stronger NDVI contrast" class="project-image">
+
+      <p class="caption">
+        Post operation adjustment showing stronger NDVI contrast.
+      </p>
+
+      <p>
+        In order to measure the rate of change from 2018 to 2025, I used raster analysis and subtracted the NDVI of 2025 from 2018. The difference, if positive showed that vegetation may have been lost. Negative values on this map would denote that vegetation was actually gained. Areas around 0 would show that there was likely no change. When looking at the change map, I increased contrast greatly as I was quite interested in finding hotspots, not just small possible increases. One of these hotspots is found near the north of lake. I'm not sure if this can classified as change in land use due to the fact the banks of lakes are changing which could've skewed the results as lakes would 0 under the NDVI index, Other hotspots can be found in the extreme north and south where settlements have expanded somewhat. While close to the natural reserve, these lands do not technically encroach onto protected space which may explain their expansion. The NDVI can be useful for identifying vegetation patterns but it cannot be considered to be completely accurate. As composite images consist of many photos stitched together, the photos may have been affected by cloud cover. Nevertheless, it does allow for us to locate potential hotspots which we can investigate further. Comparison allows us to notice changes.
+      </p>
+    </section>
+
+    <section>
+      <h2>My Maps</h2>
+
+      <div class="map-container">
+        <h3>True Color RGB 2018</h3>
+
+        <img src="images/true Color 2018.png" alt="True Color RGB Time 1 map" class="project-image">
+
+        <p class="caption">
+          True Color RGB 2018.
+        </p>
+      </div>
+
+      <div class="map-container">
+        <h3>True Color RGB 2025</h3>
+
+        <img src="images/True Color 2025.png" alt="True Color RGB Time 2 map" class="project-image">
+
+        <p class="caption">
+          True Color RGB 2025.
+        </p>
+      </div>
+
+      <div class="map-container">
+        <h3>NDVI 2018</h3>
+
+        <img src="images/NDVI 2018.png" alt="NDVI Time 1 map" class="project-image">
+
+        <p class="caption">
+          NDVI 2018.
+        </p>
+      </div>
+
+      <div class="map-container">
+        <h3>NDVI 2025</h3>
+
+        <img src="images/Ndvi 2025.png" alt="NDVI Time 2 map" class="project-image">
+
+        <p class="caption">
+          NDVI 2025.
+        </p>
+      </div>
+
+      <div class="map-container">
+        <h3>Change Over Time</h3>
+
+        <img src="images/ndvi change.png" alt="NDVI change over time map" class="project-image">
+
+        <p class="caption">
+          Change over time.
+        </p>
+      </div>
+    </section>
+
+    <p>
+      <a href="index.html">Back to homepage</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GIS Student Portfolio</p>
+  </footer>
+</body>
+</html>

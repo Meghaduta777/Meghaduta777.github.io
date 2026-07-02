@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clinic Accessibility Analysis</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: #f7f9fc;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1f6feb, #0b3d91);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      max-width: 850px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 35px 20px;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #0b3d91;
+      margin-top: 0;
+    }
+
+    .project-image {
+      width: 100%;
+      max-width: 1100px;
+      display: block;
+      margin: 25px auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    }
+
+    .caption {
+      font-size: 0.95rem;
+      color: #555;
+      text-align: center;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: #0b3d91;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0b3d91;
+      color: white;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Clinic Accessibility Analysis</h1>
+    <p>
+      How many residential buildings in central Frankfurt am Main are within 5, 10, and 15 minutes walking distance of hospitals?
+    </p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Final Map</h2>
+
+      <img src="images/final print.png" alt="Final clinic accessibility map" class="project-image">
+
+      <p class="caption">
+        Final map showing 5, 10, and 15 minute walking-distance isochrones around clinics.
+      </p>
+    </section>
+
+    <section>
+      <h2>Research Question</h2>
+
+      <p>
+        How many residential buildings in central Frankfurt am Main are within 5, 10, and 15 minutes walking distance of hospitals?
+      </p>
+    </section>
+
+    <section>
+      <h2>Project Explanation</h2>
+
+      <p>
+        I chose this topic because this is where I live. It's close to the larger city of Frankfurt but as a suburb I don't think it gets the attention it deserves as the larger city of Frankfurt sucks up most of the resources. I originally began this project with hospitals in mind, but I could find any, and I had to change my search to clinics. The clinics (two) are clustered in the town center, close to the railway track and somewhat overcrowded. I still haven't managed to get an appointment for my blood test. I wanted to see how many households the two clinics serve. It lies in line with SDG 2, equal and fair access to healthcare. I also chose walking time because I imagine that clinics (while certainly playing a significant role in ensuring the proper health of locals) would not take care of highly critical events. Rather their services run in the background, detecting larger trends and serving the community by ensuring that they don't end up in critical situations.
+      </p>
+    </section>
+
+    <section>
+      <h2>GIS Method</h2>
+
+      <p>
+        I used Openstreetmap to get my base map. This was crucial in helping make sure that i got proper point data about houses and clinics. I used ORS tools to create isochrones that depended on walking times, 5, 10 and 15 mins as these seemed like realistic times that people would be willing to walk in order to get to an appointment. The isochrones were then dissolved to create more accurate shapes and improve the way that overlaps are shown. The 10 min and 15 min isochrones were combined. This was important due to the fact the hospitals were so close to each other.
+      </p>
+
+      <p>
+        Openstreetmaps also allowed for simplified access to residential areas. While you could see each house's polygonal shape, this was converted to centroids as the structure was not necessary. Overlap was counted using such tools.
+      </p>
+    </section>
+
+    <section>
+      <h2>Results and Interpretation</h2>
+
+      <p>
+        4231 houses in 5 min range, 12,627 houses in 10 min range and 19,844 houses in 1 5 min range but these results were cumulative. When subtracted, we get.
+      </p>
+
+      <p>
+        For 5 min= 4231<br>
+        For greater than 5 but less than/ equal to 10 min = 8396<br>
+        For greater than 10 but less than/ equal to 15 min = 7217
+      </p>
+
+      <p>
+        Theres is a greater housing density near the south.  When put into a map like this, I feel that the amount of clinics for each patient are well planned. However, I feel that a clinic should ought to be opened for the northern part as the isochrone ranges seems to be larger there
+      </p>
+    </section>
+
+    <p>
+      <a href="index.html">Back to homepage</a>
+    </p>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 GIS Student Portfolio</p>
+  </footer>
+</body>
+</html>
